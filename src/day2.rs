@@ -18,7 +18,31 @@ pub fn part_one() -> i32 {
     horizontal_position * depth
 }
 
-const INPUT: [&str; 1000] = [
+pub fn part_two() -> i32 {
+    let mut horizontal_position = 0;
+    let mut depth = 0;
+    let mut aim = 0;
+
+    for command in &INPUT {
+        let command: Vec<&str> = command.split_ascii_whitespace().collect();
+        if let [command_type, amount] = command[..] {
+            let amount = amount.parse::<i32>().unwrap();
+            match command_type {
+                "forward" => {
+                    horizontal_position += amount;
+                    depth += amount * aim;
+                }
+                "up" => aim -= amount,
+                "down" => aim += amount,
+                _ => unreachable!(),
+            }
+        };
+    }
+
+    horizontal_position * depth
+}
+
+static INPUT: [&str; 1000] = [
     "forward 1",
     "forward 5",
     "forward 8",
