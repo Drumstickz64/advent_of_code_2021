@@ -135,3 +135,18 @@ pub fn part_one() -> i32 {
 
     times_increased
 }
+
+pub fn part_two() -> i32 {
+    let mut prev_window = INPUT[0] + INPUT[1] + INPUT[2];
+    let mut times_increased = 0;
+
+    for x in INPUT.windows(3).skip(1) {
+        let sum: i32 = x.iter().sum();
+        if sum > prev_window {
+            times_increased += 1;
+        }
+        prev_window = sum;
+    }
+
+    times_increased
+}
