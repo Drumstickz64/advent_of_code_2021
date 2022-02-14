@@ -1,5 +1,5 @@
 [package]
-name = "day1_sonar_sweep"
+name = "advent_of_code"
 version = "0.1.0"
 edition = "2021"
 
