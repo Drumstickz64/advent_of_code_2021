@@ -5,7 +5,7 @@ mod day6;
 mod day7;
 
 const DAY_TO_RUN: u32 = 7;
-const PART_TO_RUN: u32 = 1;
+const PART_TO_RUN: u32 = 2;
 
 #[allow(clippy::single_match)]
 fn main() {
@@ -32,6 +32,7 @@ fn main() {
         },
         7 => match PART_TO_RUN {
             1 => println!("Day 7 part 1: {}", day7::part_one()),
+            2 => println!("Day 7 part 2: {}", day7::part_two()),
             _ => (),
         },
         _ => (),
